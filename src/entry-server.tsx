@@ -1,7 +1,7 @@
-import { renderToString } from 'solid-js/web'
-import App from './App'
+import { renderToStream } from "solid-js/web"
+import App from "./App"
 
 export function render() {
-  const html = renderToString(() => <App />)
+  const html = renderToStream(() => <App />)
   return { html }
 }

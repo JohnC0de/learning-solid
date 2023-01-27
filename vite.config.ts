@@ -1,7 +1,5 @@
-import { defineConfig } from 'vite'
-import solid from 'vite-plugin-solid'
+import { defineConfig } from "vite"
+import solid from "vite-plugin-solid"
+import UnoCSS from "unocss/vite"
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [solid({ ssr: true })]
-})
+export default defineConfig({ plugins: [solid({ ssr: true }), UnoCSS()] })
