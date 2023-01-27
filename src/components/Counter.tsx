@@ -15,7 +15,7 @@ export default function Counter() {
   return (
     <div>
       <h1>This counter will increase after each second: {count() ?? `0`}</h1>
-      <h1>The double of the counter is: {count() * 2 ?? `0`}</h1>
+      <h1>The double of the counter is: {doubleCount ?? `0`}</h1>
     </div>
   )
 }
