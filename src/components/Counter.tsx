@@ -1,12 +1,6 @@
-import { createEffect, createMemo, createSignal } from "solid-js"
+import { Component, createEffect, createMemo, createSignal } from "solid-js"
 
-function fibonacci(num: number) {
-  if (num <= 1) return 1
-
-  return fibonacci(num - 1) + fibonacci(num - 2)
-}
-
-export default function Counter() {
+const Counter: Component = () => {
   const [count, setCount] = createSignal(0)
 
   createEffect(() => {
@@ -14,9 +8,10 @@ export default function Counter() {
     if (count() % 3 === 0) console.log(count())
   })
 
+  const fibonacci = (num: number): number => (num <= 1 ? 1 : fibonacci(num - 1) + fibonacci(num - 2))
+
   const fibMemo = createMemo(() => {
     // Stop the calculation after 10 to prevent freezing the browser
-    console.log("called")
     if (count() > 10) return `Limit reached, stopping for performance reasons`
     return fibonacci(count())
   })
@@ -33,3 +28,4 @@ export default function Counter() {
     </div>
   )
 }
+export default Counter
