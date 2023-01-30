@@ -1,4 +1,4 @@
-/* @refresh granular */
+/* @refresh reload  */
 import { render } from "solid-js/web"
 import "uno.css"
 import "@unocss/reset/tailwind.css"
